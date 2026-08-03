@@ -1,5 +1,143 @@
-// Paste your Supabase project values here after setup.
-window.ISLANDPETS_CONFIG = {
-  supabaseUrl: "PASTE_SUPABASE_URL_HERE",
-  supabaseAnonKey: "PASTE_SUPABASE_ANON_KEY_HERE"
-};
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Island Pets Grooming & Hotel | San Juan, Puerto Rico</title>
+  <meta name="description" content="Professional grooming and cage-free pet hotel booking requests in San Juan, Puerto Rico.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Island Pets home">
+      <img src="islandpets-logo.png" alt="Island Pets Grooming & Hotel logo">
+    </a>
+    <div class="header-actions"><button id="langToggle" class="lang-toggle" type="button">ES</button><a class="text-link" href="#booking" data-en="Book now" data-es="Reservar">Book now</a></div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-en="San Juan, Puerto Rico" data-es="San Juan, Puerto Rico">San Juan, Puerto Rico</p>
+        <h1 data-en="A Touch of Paradise for Every Pet." data-es="Un Toque de Paraíso para Cada Mascota.">A Touch of Paradise for Every Pet.</h1>
+        <p class="lead" data-en="Expert grooming and loving, home-like pet care designed around your pet’s comfort." data-es="Grooming profesional y cuidado amoroso en un ambiente hogareño, pensado para la comodidad de tu mascota.">Expert grooming and loving, home-like pet care designed around your pet’s comfort.</p>
+        <a class="button primary" href="#booking" data-en="Request an appointment" data-es="Solicitar cita">Request an appointment</a>
+      </div>
+      <div class="hero-card">
+        <p class="small-title" data-en="Island Pets promise" data-es="La promesa de Island Pets">Island Pets promise</p>
+        <h2 data-en="Love. Care. Freedom." data-es="Amor. Cuidado. Libertad.">Love. Care. Freedom.</h2>
+        <p data-en="Personalized attention, stress-conscious grooming and cage-free stays." data-es="Atención personalizada, grooming consciente del estrés y estadías libres de jaulas.">Personalized attention, stress-conscious grooming and cage-free stays.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow" data-en="Services" data-es="Servicios">Services</p>
+        <h2 data-en="Simple care, tailored to every pet." data-es="Cuidado personalizado para cada mascota.">Simple care, tailored to every pet.</h2>
+      </div>
+      <div class="service-grid">
+        <article><h3>Breed-specific haircut</h3></article>
+        <article><h3>Sanitary area trim</h3></article>
+        <article><h3>Nail trim</h3></article>
+        <article><h3>Ear cleaning</h3></article>
+        <article><h3>De-shedding</h3></article>
+        <article><h3>Bath and drying</h3></article>
+        <article><h3>Pet hotel stay</h3></article>
+      </div>
+      <p class="note">Pricing is provided after Jessica reviews the pet’s breed, coat, needs and requested service.</p>
+    </section>
+
+    <section class="section cage-free">
+      <p class="eyebrow" data-en="Cage-free philosophy" data-es="Filosofía libre de jaulas">Cage-free philosophy</p>
+      <h2 data-en="We want every stay to feel like home." data-es="Queremos que cada estadía se sienta como en casa.">We want every stay to feel like home.</h2>
+      <p data-en="Your pet is more than a guest—they’re family. Hotel requests remain pending until Jessica personally reviews and confirms them." data-es="Tu mascota es más que un huésped: es familia. Las solicitudes de hotel permanecen pendientes hasta que Jessica las revise y confirme personalmente.">Your pet is more than a guest—they’re family. Hotel requests remain pending until Jessica personally reviews and confirms them.</p>
+    </section>
+
+    <section class="section booking-section" id="booking">
+      <div class="section-heading">
+        <p class="eyebrow" data-en="Fast booking request" data-es="Solicitud rápida de cita">Fast booking request</p>
+        <h2 data-en="Request your preferred appointment." data-es="Solicita tu cita preferida.">Request your preferred appointment.</h2>
+        <p data-en="Complete the form in about one minute. Jessica will confirm the appointment and send the service quote by text or phone." data-es="Completa el formulario en aproximadamente un minuto. Jessica confirmará la cita y enviará la cotización por mensaje de texto o llamada.">Complete the form in about one minute. Jessica will confirm the appointment and send the service quote by text or phone.</p>
+      </div>
+
+      <form id="bookingForm" class="booking-form">
+        <label>
+          Service
+          <select id="service" required>
+            <option value="">Select a service</option>
+            <option>Full grooming</option>
+            <option>Bath and drying</option>
+            <option>Breed-specific haircut</option>
+            <option>Sanitary area trim</option>
+            <option>Nail trim</option>
+            <option>Ear cleaning</option>
+            <option>De-shedding</option>
+            <option>Pet hotel stay</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <div class="two-columns">
+          <label>
+            Preferred date
+            <input id="date" type="date" required>
+          </label>
+          <label>
+            Available time
+            <select id="time" required disabled>
+              <option value="">Choose a date first</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="two-columns">
+          <label>
+            Pet name
+            <input id="petName" type="text" autocomplete="off" required>
+          </label>
+          <label>
+            Breed
+            <input id="breed" type="text" autocomplete="off" required>
+          </label>
+        </div>
+
+        <label>
+          Notes or special needs
+          <textarea id="notes" rows="3" placeholder="Coat condition, temperament, medication, hotel dates or anything Jessica should know"></textarea>
+        </label>
+
+        <div class="two-columns">
+          <label>
+            Owner full name
+            <input id="ownerName" type="text" autocomplete="name" required>
+          </label>
+          <label>
+            Phone number
+            <input id="phone" type="tel" autocomplete="tel" required>
+          </label>
+        </div>
+
+        <label class="checkbox">
+          <input id="consent" type="checkbox" required>
+          <span>I understand this is a booking request and remains pending until Jessica confirms it.</span>
+        </label>
+
+        <button class="button primary" type="submit">Submit booking request</button>
+        <p id="formMessage" class="form-message" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <img src="islandpets-logo.png" alt="" aria-hidden="true">
+    <div>
+      <strong>Island Pets Grooming & Hotel</strong>
+      <p>San Juan, Puerto Rico 00926</p><p data-en="Business hours: 9:00 AM–6:00 PM" data-es="Horario: 9:00 AM–6:00 PM">Business hours: 9:00 AM–6:00 PM</p>
+      <p><a href="tel:+17877172278">(787) 717-2278</a> · <a href="https://instagram.com/islandpets_" target="_blank" rel="noopener">@islandpets_</a></p>
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
