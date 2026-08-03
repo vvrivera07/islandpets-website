@@ -1,4 +1,4 @@
 window.ISLANDPETS_CONFIG = {
-  supabaseUrl: "PASTE_PROJECT_URL_HERE",
-  supabaseAnonKey: "PASTE_PUBLISHABLE_KEY_HERE"
+  supabaseUrl: "https://qvtuvwtdbgkiiushrbmy.supabase.co/rest/v1/",
+  supabaseAnonKey: "sb_publishable_ViXBcQRlznNcbWWxEZhjcQ_8RJhDTqs"
 };
